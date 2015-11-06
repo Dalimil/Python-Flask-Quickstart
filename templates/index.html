@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+
+{% block content %}
+	<h1>Index </h1>
+	<img src="{{ url_for('static', filename='img/logo.png') }}" width="50px">
+	<p class="important">
+		Welcome on my awesome homepage.
+
+	</p>
+
+	<ul id="navigation">
+	{% for item in navigation %}
+	    <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+	{%- endfor %}
+	</ul> {# a comment ... the - before endfor strips whitespace #}
+
+	{{ a_variable }}
+	{# Inside templates you have access to the request, session and g objects as well as get_flashed_messages() #}
+
+	{% if name %}
+		<h1>Hello {{ name }}!</h1>
+	{% else %}
+		<h1>Hello World!</h1>
+	{% endif %}
+
+{% endblock %}
+
+    

@@ -1,13 +1,10 @@
 from flask import Flask
-from flask import render_template, request, redirect, session, url_for, escape
+from flask import render_template, request, redirect, session, url_for, escape, make_response
 
 app = Flask(__name__)
 # (session encryption) keep this really secret:
 app.secret_key = "bnNoqxXSgzoXSOezxpZjb8mrMp5L0L4mJ4o8nRzn"
 
-if __name__ == '__main__':
-	#host='0.0.0.0' only with debug disabled - security risk
-    app.run(port=8080, debug=True) 
 
 @app.route('/')
 def index():
@@ -43,8 +40,13 @@ def logout():
 @app.route('/user/<name>')
 def show_profile(name=None):
 	# name is a variable obtained from the url path
-    return render_template('hello.html', name=name)
+	return render_template('hello.html', name=name)
 
 @app.route('/error')
-def login():
-    abort(401)
+def error():
+	abort(401)
+
+
+if __name__ == '__main__':
+	#host='0.0.0.0' only with debug disabled - security risk
+    app.run(port=8080, debug=True) 
