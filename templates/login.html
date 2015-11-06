@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<body class="container">
+<h1>Login</h1>
+  	{% with messages = get_flashed_messages(category_filter=["error_category"]) %}
+	  {% if messages %}
+	    <ul class=flashes>
+	    {% for message in messages %}
+	      <li>{{ message }}</li>
+	    {% endfor %}
+	    </ul>
+	  {% endif %}
+	{% endwith %}
+	<form action="" method="post">
+	<dl>
+	  <dt>Username:
+	  <dd><input type="text" name="username" value="{{ request.form.username }}">
+	  <dt>Password:
+	  <dd><input type="password" name="password">
+	</dl>
+	<p><input type="submit" value="Login">
+	</form>
+</body>
+{% endblock %}

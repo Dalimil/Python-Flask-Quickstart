@@ -12,3 +12,7 @@ pip install -r requirements.txt
 ```sh
 python main.py
 ```
+## TODO
+Examples:
+* python requests
+* ajax $http()
