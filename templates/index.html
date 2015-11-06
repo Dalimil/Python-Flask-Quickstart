@@ -1,25 +1,19 @@
 {% extends "layout.html" %}
+
 {% block title %}Index{% endblock %}
-{% block head %}
+{% block head %} {# a comment ... any block can be omitted #}
   {{ super() }}
   <style type="text/css">
-    .important { color: #336699; }
+    .navigation { color: #336699; }
   </style>
 {% endblock %}
 
 {% block content %}
-	<h1>Index </h1>
-	<img src="{{ url_for('static', filename='img/logo.png') }}" width="50px">
-	<p class="important">
-		Welcome on my awesome homepage.
-
-	</p>
-
 	<ul id="navigation">
 	{% for item in navigation %}
 	    <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-	{%- endfor %}
-	</ul> {# a comment ... the - before endfor strips whitespace #}
+	{%- endfor %} {# the - before endfor strips whitespace #}
+	</ul> 
 
 	{{ a_variable }}
 	{# Inside templates you have access to the request, session and g objects as well as get_flashed_messages() #}
@@ -30,6 +24,28 @@
 		<h1>Hello World!</h1>
 	{% endif %}
 
+
+  <div class="jumbotron">
+    <h1>My Bootstrap Page <img src="{{ url_for('static', filename='img/logo.png') }}" width="50px"></h1>
+    <p>Resize this responsive page to see the effect!</p> 
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
 {% endblock %}
 
     

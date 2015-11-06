@@ -1,3 +1,4 @@
-body {
-	background-color: #E6E6FA;
+#footer {
+	position: absolute;
+	bottom: 20px;
 }
