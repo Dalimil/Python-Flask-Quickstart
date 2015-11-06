@@ -14,13 +14,6 @@
     {% endblock %}
   </head>
 
-  <body>
-    <div class="container">
-      <div id="content">{% block content %}{% endblock %}</div>
-
-      <div id="footer">
-        &copy; Copyright 2015
-      </div>
-    </div>
-  </body>
+  {% block content %}
+  {% endblock %}
 </html>

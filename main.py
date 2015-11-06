@@ -40,7 +40,7 @@ def logout():
 @app.route('/user/<name>')
 def show_profile(name=None):
 	# name is a variable obtained from the url path
-	return render_template('hello.html', name=name)
+	return render_template('profile.html', name=name)
 
 @app.route('/error')
 def error():
