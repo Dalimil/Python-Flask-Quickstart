@@ -16,3 +16,4 @@ python main.py
 Examples:
 * python requests
 * ajax $http()
+* mongo db demo
