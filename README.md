@@ -16,4 +16,6 @@ python main.py
 Examples:
 * python requests
 * ajax $http()
+* SQL Alchemy
 * mongo db demo
+* Flask-OAuthlib
