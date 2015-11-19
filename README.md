@@ -14,7 +14,6 @@ python main.py
 ```
 ## TODO
 Examples:
-* python requests
 * ajax $http()
 * SQL Alchemy
 * mongo db demo
