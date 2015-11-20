@@ -1,6 +1,8 @@
 # Flask-Reference
 Python Flask notes for quick reference
 
+This repository contains Flask-related code samples.
+
 ## Installation
 
 #### Install required packages
@@ -17,4 +19,3 @@ Examples:
 * ajax $http()
 * SQL Alchemy
 * mongo db demo
-* Flask-OAuthlib
