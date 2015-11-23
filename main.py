@@ -14,7 +14,7 @@ def index():
         print(session)
 
     tokenCookie = request.cookies.get('token')
-    print("cookie: "+tokenCookie)
+    print("cookie: "+str(tokenCookie))
 
     resp = make_response(render_template('index.html'))
     resp.set_cookie('token', '123456789')

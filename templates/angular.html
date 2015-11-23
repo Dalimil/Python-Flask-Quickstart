@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<ul>
+  <li ng-repeat="x in names">
+    {{ x.Name + ', ' + x.Country + (5+5) }}
+  </li>
+</ul>
+
+<button ng-click="toggle()">Toggle Visible</button>
+
+<p ng-hide="myVar">
+Last Name: <input type=text ng-model="lastName"><br>
+Full Name: {{firstName + " " + lastName}}
+</p>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    $scope.firstName = "John",
+    $scope.lastName = "Doe"
+    $scope.myVar = false;
+    $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+    };
+
+  $http.get("http://www.w3schools.com/angular/customers.php")
+  .success(function (response) {
+    $scope.names = response.records;
+    $scope.firstName = $scope.names[0]
+  });
+  
+  
+});
+</script>
+
+</body>
+</html>
