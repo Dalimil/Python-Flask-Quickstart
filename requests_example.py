@@ -1,8 +1,9 @@
 # Examples of 'requests' package + 'json' package
+# http://docs.python-requests.org
 
 import requests
 
-cookies = {"cookies_are": "working"}
+cookies = {"cookies_are": "working"} # use s=requests.Session(); r=s.get(..) for persistance
 params = {'key1': 'value1', 'key2': ['value2', 'value3']} # even a list
 r = requests.get('https://example.com/getme', cookies=cookies, params=params)
 print(r.url) # http://httpbin.org/get?key1=value1&key2=value2&key2=value3
