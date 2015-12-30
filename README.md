@@ -16,5 +16,4 @@ python main.py
 ```
 ## TODO
 Examples:
-* SQL Alchemy
 * mongo db demo
