@@ -9,7 +9,7 @@ r = requests.get('https://example.com/getme', cookies=cookies, params=params)
 print(r.url) # http://httpbin.org/get?key1=value1&key2=value2&key2=value3
 
 payload = {'key1': 'value1', 'key2': 'value2'}
-r = requests.post("http://example.com/post", data=payload)
+r = requests.post("http://example.com/post", data=payload) # or also json= , headers=
 
 if(r.status_code == requests.codes.ok):
 	print(r.text) # or r.json() for non-html
