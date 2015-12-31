@@ -14,6 +14,4 @@ pip install -r requirements.txt
 ```sh
 python main.py
 ```
-## TODO
-Examples:
-* mongo db demo
+
