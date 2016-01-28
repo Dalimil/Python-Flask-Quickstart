@@ -50,7 +50,7 @@ def oauth_authorized():
     return redirect(next_url)
 
 
-# NOW THE USER IS SIGNED IN - CALL API NOW
+# THE USER HAS SIGNED IN - CALL API NOW
 
 # Create a tweet
 resp = twitter.post('statuses/update.json', data={

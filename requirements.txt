@@ -2,4 +2,3 @@ flask
 Flask-SQLAlchemy
 Flask-OAuthlib
 requests
-Flask-PyMongo
