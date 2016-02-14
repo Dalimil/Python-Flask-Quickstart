@@ -32,7 +32,7 @@ def login():
 		# get POST data
 		session['username'] = request.form['username']
 		# TODO check credentials here
-		# flash('Invalid credentials', "error_category")
+		# flash('Invalid credentials', "error_category"); abort(401)
 		# # and no redirect OR success:
 		flash('You were successfully logged in')
 		return redirect(url_for('index'))
@@ -57,11 +57,32 @@ def show_profile(name=None):
 	print(database.get_users()) 
 	return render_template('bootstrap_example.html', name=name)
 
-@app.route('/error')
-def error():
-	abort(401)
 
+# Flask-SocketIO -------------------------------------------------------
+@app.route('/socket_index')
+def my_socket_page():
+	return render_template('sockets_example.html')
+
+from flask_socketio import SocketIO, send, emit
+# WebSockets setup -- "https://flask-socketio.readthedocs.org/en/latest/"
+# See docs for 'rooms' - join/leave etc.
+socketio = SocketIO(app)
+# SocketIO RECEIVE and SEND Messages
+# Originating from a user
+@socketio.on('user_clicked_button') # CUSTOM or use predefined 'json', or 'message' (for strings)
+def handle_my_custom_event(arg1, arg2): # any number of args
+    print(arg1); print(arg2)
+    print(session)
+    emit('all_ok', "You sent me this:"+arg2) # broadcast=True
+
+# Originating from this server
+def some_internal_function():
+	# different emit()/send() (notice 'socketio' prefix)
+    socketio.emit('big_news', {'data': 42}) # broadcast is implicit
+
+# -------------------------------------------------------------------
 
 if __name__ == '__main__':
 	#host='0.0.0.0' only with debug disabled - security risk
-	app.run(port=8080, debug=True) 
+	#app.run(port=8080, debug=True) - don't use this one with sockets
+	socketio.run(app, port=8080, debug=True) # only use this with sockets

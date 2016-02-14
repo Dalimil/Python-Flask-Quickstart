@@ -1,0 +1,24 @@
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script>
+
+    var socket = io(); // init connection
+
+    /* SEND Message */
+    function notify_clicked(){ 
+    	socket.emit('user_clicked_button', {data: 'I clicked the big button'}, "more data");
+    }
+
+    /* RECEIVE Message */
+   	socket.on('big_news', function(data) {
+   		console.log(data);
+    });
+
+    socket.on('all_ok', function(data) {
+    	console.log("OK: "+data);
+    });
+
+</script>
+
+<h3>Hello Web Sockets</h3>
+<button onclick="notify_clicked();">Send message to server</button>
+
