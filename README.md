@@ -14,8 +14,3 @@ pip install -r requirements.txt
 ```sh
 python main.py
 ```
-
-### TODO
-Add rauth example
-https://rauth.readthedocs.org/en/latest/
-http://rauth.readthedocs.org/en/latest/api/

@@ -1,3 +1,5 @@
+# Alternatively with Rauth: add 'rauth' to requirements and use https://rauth.readthedocs.org/en/latest/
+
 from flask_oauthlib.client import OAuth
 
 oauth = OAuth(app) # or oauth = oAuth(); oauth.init(app) for later init
