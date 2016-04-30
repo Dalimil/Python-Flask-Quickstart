@@ -1,5 +1,5 @@
-# Flask-Reference
-Python Flask notes for quick reference
+# Flask-Quickstart
+**Python Flask web framework notes for quick reference**
 
 This repository contains Flask-related code samples.
 
